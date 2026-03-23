@@ -1,97 +1,115 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# WayGood – Study Abroad Programs App
 
-# Getting Started
+A React Native mobile application that helps students discover and explore study abroad programs at top universities worldwide.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Browse a list of international universities and study programs
+- Search by university name or country
+- View detailed information for each program (description, tuition, intake dates, available programs)
+- Tap "Visit Official Website" to open the university's site
+- Responsive layout that works on all screen sizes (iOS & Android)
+- Clean, reusable component architecture
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## Screenshots
 
-# OR using Yarn
-yarn start
+| Home Screen | Details Screen |
+|---|---|
+| List of programs with search | Full program details with CTA |
+
+---
+
+## Tech Stack
+
+- **React Native CLI** (v0.84.1)
+- **React Navigation** – Native Stack Navigator
+- **react-native-safe-area-context** – Safe area handling
+- **react-native-screens** – Native screen optimization
+
+---
+
+## Project Structure
+
+```
+WayGood/
+├── src/
+│   ├── data/
+│   │   └── programs.js        # Static JSON data for all programs
+│   ├── components/
+│   │   └── ProgramCard.js     # Reusable card component for the list
+│   └── screens/
+│       ├── HomeScreen.js      # Main list screen with search
+│       └── DetailsScreen.js   # Full detail view for a program
+├── App.js                     # Navigation setup (root)
+└── index.js                   # App entry point
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Getting Started
 
-### Android
+### Prerequisites
 
-```sh
-# Using npm
-npm run android
+- Node.js >= 22
+- React Native development environment set up ([guide](https://reactnative.dev/docs/set-up-your-environment))
+- For iOS: Xcode + CocoaPods
+- For Android: Android Studio + Android SDK
 
-# OR using Yarn
-yarn android
-```
+### Installation
 
-### iOS
+```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/WayGood.git
+cd WayGood
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+# 2. Install JS dependencies
+npm install
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+# 3. iOS only – install CocoaPods
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Running the App
 
-```sh
-# Using npm
+```bash
+# Start Metro bundler
+npm start
+
+# Run on Android (new terminal)
+npm run android
+
+# Run on iOS (new terminal)
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Sample Data Format
 
-## Step 3: Modify your app
+```json
+[
+  {
+    "id": 1,
+    "university": "University of Toronto",
+    "country": "Canada",
+    "flag": "🇨🇦",
+    "description": "Top ranked university offering multiple international programs.",
+    "fullDescription": "...",
+    "programs": ["Computer Science", "Business Administration"],
+    "tuitionRange": "CAD $30,000 – $55,000/year",
+    "intake": "September & January",
+    "website": "https://www.utoronto.ca"
+  }
+]
+```
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## License
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+MIT
